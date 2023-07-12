@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argoCD-test-app
+  namespace: default
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  project: default
+  source:
+    repoURL: https://github.com/aduric6/argoCD-test
+    targetRevision: 4fca5033cd1f3988f16fb461b2a399c2a3c1b8a3
+    path: deploy/k8s
