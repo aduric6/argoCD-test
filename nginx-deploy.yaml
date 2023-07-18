@@ -40,3 +40,21 @@ spec:
   type: NodePort
 status:
   loadBalancer: {}
+
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: busybox-argocd-test
+  name: busybox-argocd-test
+spec:
+  containers:
+  - args:
+    - busybox-argocd-test.yaml
+    image: busybox
+    name: busybox-argocd-test
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
