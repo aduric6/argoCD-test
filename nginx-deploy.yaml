@@ -41,18 +41,20 @@ spec:
 status:
   loadBalancer: {}
 
-apiVersion: v1
+
 kind: Pod
 metadata:
   creationTimestamp: null
   labels:
-    run: nginx-argocd-pod
-  name: nginx-argocd-pod
+    run: argocd-nginx-pod
+  name: argocd-nginx-pod
 spec:
   containers:
-    image: nginx
-    name: nginx-argocd-pod
+  - image: nginx
+    name: argocd-nginx-pod
     resources: {}
   dnsPolicy: ClusterFirst
   restartPolicy: Always
 status: {}
+
+
